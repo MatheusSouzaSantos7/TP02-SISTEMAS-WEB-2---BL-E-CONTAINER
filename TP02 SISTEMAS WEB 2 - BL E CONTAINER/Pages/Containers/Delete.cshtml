@@ -1,0 +1,20 @@
+﻿@page "{id:int}"
+@model TP02_SISTEMAS_WEB_2___BL_E_CONTAINER.Pages.Containers.DeleteModel
+@{
+    ViewData["Title"] = "Delete Container";
+}
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h2 class="h5 text-danger">Delete Container</h2>
+        <p>Are you sure you want to delete the following container?</p>
+        <dl class="row">
+            <dt class="col-sm-3">Numero</dt>
+            <dd class="col-sm-9">@Model.Container.Numero</dd>
+        </dl>
+        <form method="post" class="d-flex justify-content-end">
+            <a class="btn btn-outline-secondary me-2" asp-page="Index">Cancel</a>
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+    </div>
+</div>

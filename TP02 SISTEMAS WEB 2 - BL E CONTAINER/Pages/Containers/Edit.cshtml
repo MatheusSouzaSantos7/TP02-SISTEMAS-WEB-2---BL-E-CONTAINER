@@ -1,0 +1,39 @@
+﻿@page "{id:int}"
+@model TP02_SISTEMAS_WEB_2___BL_E_CONTAINER.Pages.Containers.EditModel
+@{
+    ViewData["Title"] = "Edit Container";
+}
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h2 class="h5">Edit Container</h2>
+        <form method="post" class="row g-3 mt-2">
+            <input type="hidden" asp-for="Container.Id" />
+            <div class="col-md-6">
+                <label class="form-label">Numero</label>
+                <input class="form-control" asp-for="Container.Numero" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Tipo</label>
+                <select class="form-select" asp-for="Container.Tipo">
+                    <option>Dry</option>
+                    <option>Reefer</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Tamanho</label>
+                <input type="number" class="form-control" asp-for="Container.Tamanho" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">BL</label>
+                <select class="form-select" asp-for="Container.BLId" asp-items="Model.BLOptions">
+                    <option value="">-- Select BL --</option>
+                </select>
+            </div>
+            <div class="col-12 d-flex justify-content-end">
+                <a class="btn btn-outline-secondary me-2" asp-page="Index">Cancel</a>
+                <button class="btn btn-primary" type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+﻿@page "{id:int}"
+@model TP02_SISTEMAS_WEB_2___BL_E_CONTAINER.Pages.BLs.DetailsModel
+@{
+    ViewData["Title"] = "BL Details";
+}
+
+<div class="card shadow-sm mb-3">
+    <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start">
+            <div>
+                <h2 class="h5">Bill of Lading</h2>
+                <p class="mb-1"><strong>Numero:</strong> @Model.BL.Numero</p>
+                <p class="mb-1"><strong>Consignee:</strong> @Model.BL.Consignee</p>
+                <p class="mb-0"><strong>Navio:</strong> @Model.BL.Navio</p>
+            </div>
+            <div class="text-end">
+                <a class="btn btn-outline-secondary me-2" asp-page="Index">Back</a>
+                <a class="btn btn-primary" asp-page="~/Containers/Create" asp-route-blId="@Model.BL.Id">Add Container</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th>Id</th>
+                    <th>Numero</th>
+                    <th>Tipo</th>
+                    <th>Tamanho</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach(var c in Model.BL.Containers)
+            {
+                <tr>
+                    <td>@c.Id</td>
+                    <td>@c.Numero</td>
+                    <td>@c.Tipo</td>
+                    <td>@c.Tamanho</td>
+                    <td>
+                        <a class="btn btn-sm btn-outline-info me-1" asp-page="~/Containers/Edit" asp-route-id="@c.Id">Edit</a>
+                        <a class="btn btn-sm btn-outline-danger" asp-page="~/Containers/Delete" asp-route-id="@c.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

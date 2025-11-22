@@ -1,0 +1,24 @@
+﻿@page "{id:int}"
+@model TP02_SISTEMAS_WEB_2___BL_E_CONTAINER.Pages.Containers.DetailsModel
+@{
+    ViewData["Title"] = "Container Details";
+}
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h2 class="h5">Container Details</h2>
+        <dl class="row">
+            <dt class="col-sm-3">Numero</dt>
+            <dd class="col-sm-9">@Model.Container.Numero</dd>
+            <dt class="col-sm-3">Tipo</dt>
+            <dd class="col-sm-9">@Model.Container.Tipo</dd>
+            <dt class="col-sm-3">Tamanho</dt>
+            <dd class="col-sm-9">@Model.Container.Tamanho</dd>
+            <dt class="col-sm-3">BL</dt>
+            <dd class="col-sm-9">@Model.Container.BL?.Numero</dd>
+        </dl>
+        <div class="text-end">
+            <a class="btn btn-outline-secondary" asp-page="Index">Back</a>
+        </div>
+    </div>
+</div>

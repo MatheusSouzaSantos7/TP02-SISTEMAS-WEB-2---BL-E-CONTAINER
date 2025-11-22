@@ -1,0 +1,29 @@
+﻿@page
+@model TP02_SISTEMAS_WEB_2___BL_E_CONTAINER.Pages.BLs.CreateModel
+@{
+    ViewData["Title"] = "Create BL";
+}
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h2 class="h5">New Bill of Lading</h2>
+        <form method="post" class="row g-3 mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Numero</label>
+                <input class="form-control" asp-for="BL.Numero" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Consignee</label>
+                <input class="form-control" asp-for="BL.Consignee" />
+            </div>
+            <div class="col-12">
+                <label class="form-label">Navio</label>
+                <input class="form-control" asp-for="BL.Navio" />
+            </div>
+            <div class="col-12 d-flex justify-content-end">
+                <a class="btn btn-outline-secondary me-2" asp-page="Index">Cancel</a>
+                <button class="btn btn-primary" type="submit">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
